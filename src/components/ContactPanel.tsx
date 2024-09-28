@@ -36,7 +36,9 @@ export default function ContactPanel() {
           <FaLocationDot />
         </div>
         <div>
-          <Translate text={cvData.contact.location} />
+          <a href={cvData.contact.locationUrl}>
+            <Translate text={cvData.contact.location} />
+          </a>
         </div>
       </div>
       <div>

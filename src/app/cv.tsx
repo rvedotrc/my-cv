@@ -27,6 +27,7 @@ export const cvData = {
       da: "København",
       en: "Copenhagen",
     },
+    locationUrl: "https://youtu.be/O6jOTZD6rg4?si=Au9A4Pzwy8f5NEFa&t=60",
   },
   intro: [
     {
