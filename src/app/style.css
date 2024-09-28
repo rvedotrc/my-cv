@@ -17,9 +17,17 @@ div {
 
 @media screen {
   .sidePanel {
-    background-color: #ddd;
+    background-color: rgba(28, 70, 125, 1); /* #1c467d; */
+    color: #ccc;
     padding: 1.2em;
     width: 200px;
+  }
+
+  body .sidePanel a,
+  .sidePanel a:visited,
+  .sidePanel a:hover,
+  .sidePanel a:focus {
+    color: #ccc !important;
   }
 }
 
@@ -79,6 +87,11 @@ h2 {
   margin-top: 1.5em;
 }
 
+h2.contactSubtitle {
+  font-style: italic;
+  font-size: 110%;
+}
+
 .contactPronouns {
   font-size: 80%;
   font-style: italic;
@@ -127,16 +140,7 @@ h2 {
 }
 
 .educationPanel > div {
-  display: flex;
-  flex-direction: row;
-  align-items: top;
-  position: relative;
-  left: -0.4em;
-}
-
-.educationPanel > div > div:first-child {
-  min-width: 2em;
-  text-align: center;
+  white-space: pre;
 }
 
 .humanLanguages {

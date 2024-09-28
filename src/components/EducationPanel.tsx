@@ -9,7 +9,6 @@ export default function EducationPanel () {
     <div className="educationPanel">
       {cvData.education.map((e, i) => (
         <div key={i}>
-          <div title="education">🎓</div>
           <div><Translate text={e.name}/></div>
         </div>
       ))}    

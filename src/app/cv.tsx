@@ -2,7 +2,7 @@ export type CVData = typeof cvData;
 
 export const cvData = {
     contact: {
-        name: "Rachel Victoria Evans",
+        name: "Rachel V. Evans",
         pronouns: {
             da: "hun / hende / hendes",
             en: "she / her / hers",
@@ -73,12 +73,10 @@ export const cvData = {
                 da: "juli 2024",
                 en: "July 2024",
             },
-            text: [
-                {
-                    da: "Jeg lavede nogle ting.",
-                    en: "I did some things.",
-                }
-            ],
+            text: {
+                da: ["hva?"],
+                en: ["uh", "what?"],
+            }
         },
         {
             employerName: "Zendesk",
@@ -95,15 +93,13 @@ export const cvData = {
                 da: "mai 2024",
                 en: "May 2024",
             },
-            text: [
-                {
-                    da: "Denne kunne jeg godt lide, mest af tiden.",
-                    en: "I liked this, most of the time.",
-                }
-            ],
+            text: {
+                da: ["hva?"],
+                en: ["uh", "what?"],
+            }
         },
         {
-            employerName: "British Broadcasting Corporation (BBC)",
+            employerName: "British Broadcasting Corporation (\"The BBC\")",
             jobTitle: "Principal Software Engineer",
             location: {
                 da: "London",
@@ -117,12 +113,10 @@ export const cvData = {
                 da: "januar 2019",
                 en: "January 2019",
             },
-            text: [
-                {
-                    da: "iPlayer, hurrah!",
-                    en: "iPlayer ftw.",
-                }
-            ],
+            text: {
+                da: ["hva?"],
+                en: ["uh", "what?"],
+            }
         },
         // {
         //     employerName: "Power Internet",
@@ -192,19 +186,19 @@ export const cvData = {
         // },
     ],
     employmentMore: {
-        da: "Samt tre flere stillinger, der dækker perioden 1995 — 2007",
-        en: "Plus three more jobs covering 1995 – 2007"
+        da: "Samt tre flere stillinger, der dækker perioden 1995 — 2007, udeladt for kortheds skyld",
+        en: "Plus three more jobs covering 1995 – 2007, omitted for brevity"
     },
     education: [
         {
             name: {
-                da: "BSc Mathematik (Southampton University, Storbritannien)",
-                en: "BSc Mathematics (Southampton University, UK)",
+                da: "BSc Mathematik\n(Southampton University, Storbritannien)",
+                en: "BSc Mathematics\n(Southampton University, UK)",
             },
         },
     ],
     references: {
-        da: "Referencer oplyses på opfordring.",
-        en: "References available on request."
+        da: "Referencer oplyses på opfordring",
+        en: "References available on request"
     },
 };

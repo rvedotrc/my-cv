@@ -3,7 +3,7 @@ import { Translate } from "@/app/Translate";
 import { useContext } from "react";
 
 export default function Employment() {
-    const { cvData } = useContext(myContext);
+    const { cvData, language } = useContext(myContext);
 
     return (
         <div className="employment">
@@ -21,9 +21,9 @@ export default function Employment() {
                             <div className="employmentEnd"><Translate text={e.end}/></div>
                         </div>
                         <div className="employmentText">
-                            {e.text.map((t, j) => (
+                            {e.text[language].map((t, j) => (
                                 <p key={j}>
-                                    <Translate text={t}/>
+                                    {t}
                                 </p>    
                             ))}
                         </div>
