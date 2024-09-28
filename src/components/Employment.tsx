@@ -29,16 +29,15 @@ export default function Employment() {
               </div>
             </div>
             <div className="employmentText">
-              {e.text[language].map((t, j) => (
-                <p key={j}>{t}</p>
-              ))}
+              <ul>
+                {e.text[language].map((t, j) => (
+                  <li key={j}>{t}</li>
+                ))}
+              </ul>
             </div>
           </li>
         ))}
       </ol>
-      <p className="employmentMore">
-        <Translate text={cvData.employmentMore} />
-      </p>
     </div>
   );
 }

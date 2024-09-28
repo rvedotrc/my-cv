@@ -1,13 +1,13 @@
 export default function SkillsPanel() {
   return (
     <div className="skillsPanel">
-      <h3>Languages & Frameworks:</h3>
+      <h3>Languages & Frameworks</h3>
       <ul>
         <li>Java, Ruby, Python, Bash / Zsh</li>
         <li>TypeScript / JavaScript, React</li>
         <li>SQL (MySQL, Oracle, Postgres, MS SQL)</li>
       </ul>
-      <h3>Cloud & DevOps:</h3>
+      <h3>Cloud & DevOps</h3>
       <ul>
         <li>
           AWS (EC2, S3, Lambda, SQS, SNS, RDS, IAM, VPC, KMS, CloudFormation,
@@ -17,13 +17,13 @@ export default function SkillsPanel() {
         <li>Git, GitHub Actions, CI/CD pipelines</li>
         <li>Linux Networking, Sysadmin</li>
       </ul>
-      <h3>Automation & Tools:</h3>
+      <h3>Automation & Tools</h3>
       <ul>
         <li>Splunk, Datadog</li>
         <li>REST, TCP/IP, HTTP, DNS, Internet Protocols</li>
         <li>Cryptography</li>
       </ul>
-      <h3>Leadership & Collaboration:</h3>
+      <h3>Leadership & Collaboration</h3>
       <ul>
         <li>Technical team leadership</li>
         <li>Coaching and mentoring</li>
