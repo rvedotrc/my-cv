@@ -160,6 +160,7 @@ h1 {
   margin-bottom: 0;
   font-weight: 700;
   font-size: 250%;
+  line-height: 1.5;
 }
 
 h2 {
@@ -167,14 +168,8 @@ h2 {
   margin-top: 1.5em;
 }
 
-h2.contactSubtitle {
-  font-style: italic;
-  font-size: 110%;
-}
-
 .contactPronouns {
-  font-size: 80%;
-  font-style: italic;
+  font-size: 40%;
 }
 
 .contactPronouns:before {
@@ -183,6 +178,11 @@ h2.contactSubtitle {
 
 .contactPronouns:after {
   content: ")";
+}
+
+.contactTitle {
+  font-weight: bold;
+  font-size: 1.25em;
 }
 
 .contactSubtitle {
@@ -263,9 +263,18 @@ h2.contactSubtitle {
   content: ")";
 }
 
+.skillsPanel ul {
+  padding-inline-start: 1em;
+}
+
+.skillsPanel ul li {
+  margin-block-end: 0.5em;
+}
+
 .employmentList {
   list-style: none;
   padding: 0;
+  margin-block: 2em 0;
 }
 
 .employmentList > li {
@@ -274,12 +283,15 @@ h2.contactSubtitle {
 
 .employmentHeading {
   font-weight: bold;
-  font-size: 150%;
+  font-size: 175%;
+  line-height: 1.5;
 }
 
 .employmentInfo {
   display: flex;
   flex-direction: row;
+  font-weight: bold;
+  font-size: 1.15em;
 }
 
 .employmentMore {

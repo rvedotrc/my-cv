@@ -7,7 +7,6 @@ export default function Employment() {
 
   return (
     <div className="employment">
-      <h2>Employment</h2>
       <ol className="employmentList">
         {cvData.employment.map((e, i) => (
           <li key={i}>

@@ -7,10 +7,6 @@ export const cvData = {
       da: "hun / hende / hendes",
       en: "she / her / hers",
     },
-    subtitle: {
-      da: "Absolut ikke tre egern i en regnfrakke",
-      en: "Definitely not three squirrels in a raincoat",
-    },
     telephone: {
       intl: "+4571513486",
       display: "71 51 34 86",
@@ -29,12 +25,7 @@ export const cvData = {
     },
     locationUrl: "https://youtu.be/O6jOTZD6rg4?si=Au9A4Pzwy8f5NEFa&t=60",
   },
-  intro: [
-    {
-      da: "Ansæt mig!",
-      en: "Hire me!",
-    },
-  ],
+  intro: [],
   skills: {
     human_languages: [
       {
