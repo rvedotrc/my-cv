@@ -2,12 +2,12 @@ import WhoAmI from "./WhoAmI";
 import Introduction from "./Introduction";
 import Employment from "./Employment";
 
-export default function MainPanel () {
+export default function MainPanel() {
   return (
     <div className="mainPanel">
-      <WhoAmI/>
-      <Introduction/>
-      <Employment/>      
+      <WhoAmI />
+      <Introduction />
+      <Employment />
     </div>
   );
-};
+}

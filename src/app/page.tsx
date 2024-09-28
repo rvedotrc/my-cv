@@ -13,7 +13,7 @@ export default function Home() {
         <head>
           <link rel="stylesheet" href={`/style.css?`}></link>
         </head>
-        <BodyPanel/>
+        <BodyPanel />
       </html>
     </LanguageFlipper>
   );

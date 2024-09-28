@@ -3,9 +3,15 @@
 import { MyContext, myContext, MyLanguage } from "./context";
 import { useContext, useEffect, useMemo, useState } from "react";
 
-export default function LanguageFlipper({ children }: { children: React.ReactNode }) {
+export default function LanguageFlipper({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const incomingContext = useContext(myContext);
-  const [language, setLanguage] = useState<MyLanguage>(incomingContext.language);
+  const [language, setLanguage] = useState<MyLanguage>(
+    incomingContext.language,
+  );
 
   // useEffect(
   //   () => {
@@ -20,24 +26,22 @@ export default function LanguageFlipper({ children }: { children: React.ReactNod
   // );
 
   const handler = useMemo(
-    () => function(this: HTMLElement, e: KeyboardEvent) {
+    () =>
+      function (this: HTMLElement, e: KeyboardEvent) {
         console.log({ e, setLanguage });
 
         if (!e.shiftKey && !e.ctrlKey && !e.altKey && !e.metaKey) {
           if (e.key === "e") setLanguage("en");
           if (e.key === "d") setLanguage("da");
         }
-    },
+      },
     [setLanguage],
   );
 
-  useEffect(
-    () => {
-      document.body.addEventListener("keydown", handler);
-      return () => document.body.removeEventListener("keydown", handler);
-    },
-    [handler],
-  );
+  useEffect(() => {
+    document.body.addEventListener("keydown", handler);
+    return () => document.body.removeEventListener("keydown", handler);
+  }, [handler]);
 
   const outgoingContext: MyContext = {
     ...incomingContext,
@@ -45,8 +49,6 @@ export default function LanguageFlipper({ children }: { children: React.ReactNod
   };
 
   return (
-    <myContext.Provider value={outgoingContext}>
-      {children}
-    </myContext.Provider>
+    <myContext.Provider value={outgoingContext}>{children}</myContext.Provider>
   );
 }

@@ -3,17 +3,23 @@ import { Translate } from "@/app/Translate";
 import { useContext } from "react";
 
 export default function Introduction() {
-    const { cvData } = useContext(myContext);
+  const { cvData, language } = useContext(myContext);
 
-    return (
-        <div className="introduction">
-            <h2 className="contactSubtitle"><Translate text={cvData.contact.subtitle} /></h2>
-            <div className="introPanel">
-                {cvData.intro.map((t, i) => 
-                    <p key={i}><Translate text={t}/></p>
-                )}
+  return (
+    <div className="introduction">
+      <h2 className="contactSubtitle">
+        <Translate text={cvData.contact.subtitle} />
+      </h2>
+      <div className="introPanel">
+        {cvData.intro.map((t, i) => (
+          <p key={i}>
+            <Translate text={t} />
+          </p>
+        ))}
 
-<p>
+        {language === "en" && (
+          <>
+            <p>
               I am an experienced senior engineer, historically with a focus on
               back-end work, but with the ability to cover the full stack as
               needed. My strongest languages are TypeScript / JavaScript, React,
@@ -56,7 +62,9 @@ export default function Introduction() {
               I have 5+ years experience with: Docker, GitHub actions,
               Kubernetes, React, Splunk, and Datadog.
             </p>
-            </div>
-        </div>
-    );
+          </>
+        )}
+      </div>
+    </div>
+  );
 }

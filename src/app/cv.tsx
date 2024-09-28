@@ -77,8 +77,8 @@ export const cvData = {
       text: {
         da: ["hva?"],
         en: [
-            "This med-tech startup aimed to improve the lives of people with\n                diabetes; when I arrived, they had just recently deployed their\n                proof-of-concept new medical data platform. The system consisted\n                of TypeScript microservices, and as part of on-boarding and\n                understanding the system I promoted consistency, observability,\n                and reliability, so as to ready the product for launch."
-            ],
+          "This med-tech startup aimed to improve the lives of people with\n                diabetes; when I arrived, they had just recently deployed their\n                proof-of-concept new medical data platform. The system consisted\n                of TypeScript microservices, and as part of on-boarding and\n                understanding the system I promoted consistency, observability,\n                and reliability, so as to ready the product for launch.",
+        ],
       },
     },
     {
@@ -99,9 +99,9 @@ export const cvData = {
       text: {
         da: ["hva?"],
         en: [
-            "Zendesk provides SaaS products for customer support, sales, and\n                other customer communications. I was the tech lead for one of\n                the 8 engineering teams in Copenhagen, working primarily with\n                Ruby, TypeScript, MySQL (via AWS RDS), Kubernetes, and GitHub\n                actions; our APIs were mostly GraphQL (internal) and REST\n                (external).",
-"I coached and guided my teammates and other colleagues, raising\n                the performance of the team, and driving the adoption of best\n                practices; I championed scalability, reliability, and security\n                across our entire platform. I also extended this beyond my own\n                team, shaping organizational standards and fostering a culture\n                of operational excellence and continuous improvement. I also\n                consistently fostered inclusion and diversity, and drove\n                improvements beyond just the technical."
-            ],
+          "Zendesk provides SaaS products for customer support, sales, and\n                other customer communications. I was the tech lead for one of\n                the 8 engineering teams in Copenhagen, working primarily with\n                Ruby, TypeScript, MySQL (via AWS RDS), Kubernetes, and GitHub\n                actions; our APIs were mostly GraphQL (internal) and REST\n                (external).",
+          "I coached and guided my teammates and other colleagues, raising\n                the performance of the team, and driving the adoption of best\n                practices; I championed scalability, reliability, and security\n                across our entire platform. I also extended this beyond my own\n                team, shaping organizational standards and fostering a culture\n                of operational excellence and continuous improvement. I also\n                consistently fostered inclusion and diversity, and drove\n                improvements beyond just the technical.",
+        ],
       },
     },
     {
@@ -122,10 +122,8 @@ export const cvData = {
       text: {
         da: ["hva?"],
         en: [
-            
-"I led one of the three teams that handled all of the BBC's\n                online audio and video, including iPlayer, their world-leading\n                Radio / TV streaming service. I was instrumental in the effort\n                to ditch our large on-prem Perl monolith, and replace it with\n                designed-for-AWS microservices written in Java.",
-" A key milestone was reached when we provided unprecedented\n                streaming access for the London 2012 Olympic Games. The whole\n                project was highly successful; we then built on that success as\n                we extended the platform with new features, greater capacity,\n                and improved resilience."
-
+          "I led one of the three teams that handled all of the BBC's\n                online audio and video, including iPlayer, their world-leading\n                Radio / TV streaming service. I was instrumental in the effort\n                to ditch our large on-prem Perl monolith, and replace it with\n                designed-for-AWS microservices written in Java.",
+          " A key milestone was reached when we provided unprecedented\n                streaming access for the London 2012 Olympic Games. The whole\n                project was highly successful; we then built on that success as\n                we extended the platform with new features, greater capacity,\n                and improved resilience.",
         ],
       },
     },
