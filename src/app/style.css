@@ -30,7 +30,8 @@ div {
   height: 11.7in;
   overflow: hidden;
   margin-block: 1em;
-  box-shadow: 0 14px 28px hsla(0deg 0% 0% / 25%),
+  box-shadow:
+    0 14px 28px hsla(0deg 0% 0% / 25%),
     0 10px 10px hsla(0deg 0% 0% / 22%);
   position: relative;
 }
@@ -251,7 +252,7 @@ h2.contactSubtitle {
 
 .humanLanguages li .languageNote {
   /* display: none; */
-  font-size: 80%;
+  /* font-size: 80%; */
 }
 
 .humanLanguages li .languageNote:before {
