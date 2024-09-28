@@ -225,12 +225,14 @@ h2.contactSubtitle {
 .humanLanguages {
   list-style: none;
   margin: inherit;
+  margin-block: 1em;
   padding: 0;
 }
 
 .humanLanguages li {
   display: flex;
   flex-direction: row;
+  align-items: baseline;
 }
 
 .humanLanguages li .languageName {
@@ -244,7 +246,7 @@ h2.contactSubtitle {
 .humanLanguages li .languageStars {
   position: relative;
   top: -0.1em;
-  width: 4em;
+  width: 5.5em;
 }
 
 .humanLanguages li .languageNote {
