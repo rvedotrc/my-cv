@@ -193,8 +193,8 @@ export const cvData = {
   education: [
     {
       name: {
-        da: "BSc Matematik\n(Southampton University, Storbritannien)",
-        en: "BSc Mathematics\n(Southampton University, UK)",
+        da: "BSc Matematik, 1994\nSouthampton University, UK",
+        en: "BSc Mathematics, 1994\nSouthampton University, UK",
       },
     },
   ],
