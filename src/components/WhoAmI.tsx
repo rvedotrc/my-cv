@@ -3,7 +3,9 @@ import { Translate } from "@/app/Translate";
 import { useContext } from "react";
 
 export default function WhoAmI() {
-  const { cvData: { introduction } } = useContext(myContext);
+  const {
+    cvData: { introduction },
+  } = useContext(myContext);
 
   return (
     <div className="whoAmI">

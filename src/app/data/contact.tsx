@@ -38,8 +38,8 @@ export const contact: Contact = {
   location: {
     url: "https://youtu.be/O6jOTZD6rg4?si=Au9A4Pzwy8f5NEFa&t=60",
     display: {
-    da: "København",
-    en: "Copenhagen",
+      da: "København",
+      en: "Copenhagen",
     },
   },
   references: {
