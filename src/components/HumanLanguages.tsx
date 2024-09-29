@@ -1,9 +1,7 @@
 import { myContext } from "@/app/context";
 import { Translate } from "@/app/Translate";
 import { useContext } from "react";
-
-const star1 = "★";
-const star2 = " ";
+import { FaStar } from "react-icons/fa6";
 
 export default function HumanLanguages() {
   const { cvData } = useContext(myContext);
@@ -16,8 +14,7 @@ export default function HumanLanguages() {
             <Translate text={l.name} />
           </div>
           <div className="languageStars" title={`${l.starsOfFive} out of 5`}>
-            {star1.repeat(l.starsOfFive)}
-            {star2.repeat(5 - l.starsOfFive)}
+            {[1, 2, 3, 4, 5].map((i) => (i <= l.starsOfFive ? <FaStar/> : ""))}
           </div>
           <div className="languageNote">
             <Translate text={l.note} />

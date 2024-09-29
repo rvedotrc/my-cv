@@ -247,7 +247,7 @@ h2 {
 
 .humanLanguages li .languageStars {
   position: relative;
-  top: -0.1em;
+  top: 0.1em;
   width: 5.5em;
 }
 
