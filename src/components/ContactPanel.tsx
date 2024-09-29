@@ -9,7 +9,9 @@ import { myContext } from "@/app/context";
 import { Translate } from "@/app/Translate";
 
 export default function ContactPanel() {
-  const { cvData } = useContext(myContext);
+  const {
+    cvData: { contact },
+  } = useContext(myContext);
 
   return (
     <div className="contactPanel">
@@ -18,8 +20,8 @@ export default function ContactPanel() {
           <FaPhoneAlt />
         </div>
         <div>
-          <a href={`tel:${cvData.contact.telephone.intl}`}>
-            {cvData.contact.telephone.display}
+          <a href={`tel:${contact.telephone.intl}`}>
+            {contact.telephone.display}
           </a>
         </div>
       </div>
@@ -28,7 +30,7 @@ export default function ContactPanel() {
           <FaEnvelope />
         </div>
         <div>
-          <a href={`mailto:${cvData.contact.email}`}>{cvData.contact.email}</a>
+          <a href={`mailto:${contact.email}`}>{contact.email}</a>
         </div>
       </div>
       <div>
@@ -36,8 +38,8 @@ export default function ContactPanel() {
           <FaLocationDot />
         </div>
         <div>
-          <a href={cvData.contact.location.url}>
-            <Translate text={cvData.contact.location.display} />
+          <a href={contact.location.url}>
+            <Translate text={contact.location.display} />
           </a>
         </div>
       </div>
@@ -46,9 +48,7 @@ export default function ContactPanel() {
           <FaLinkedin />
         </div>
         <div>
-          <a href={cvData.contact.linkedin.url}>
-            {cvData.contact.linkedin.display}
-          </a>
+          <a href={contact.linkedin.url}>{contact.linkedin.display}</a>
         </div>
       </div>
       <div>
@@ -56,9 +56,7 @@ export default function ContactPanel() {
           <FaGithub />
         </div>
         <div>
-          <a href={cvData.contact.github.url}>
-            {cvData.contact.github.display}
-          </a>
+          <a href={contact.github.url}>{contact.github.display}</a>
         </div>
       </div>
     </div>

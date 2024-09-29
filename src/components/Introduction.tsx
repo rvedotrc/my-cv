@@ -2,7 +2,10 @@ import { myContext } from "@/app/context";
 import { useContext } from "react";
 
 export default function Introduction() {
-  const { cvData: { introduction }, language } = useContext(myContext);
+  const {
+    cvData: { introduction },
+    language,
+  } = useContext(myContext);
 
   const x = introduction.introText;
   const y = x[language];

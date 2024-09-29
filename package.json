@@ -1,9 +1,10 @@
 {
-  "name": "cv",
+  "name": "my-cv",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prettier": "prettier --write src/*/*.tsx",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write .",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
