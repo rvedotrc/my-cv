@@ -3,19 +3,19 @@ import { Translate } from "@/app/Translate";
 import { useContext } from "react";
 
 export default function WhoAmI() {
-  const { cvData } = useContext(myContext);
+  const { cvData: { introduction } } = useContext(myContext);
 
   return (
     <div className="whoAmI">
       <h1 className="contactName">
-        {cvData.contact.name}{" "}
+        {introduction.name}{" "}
         <span className="contactPronouns">
-          <Translate text={cvData.contact.pronouns} />
+          <Translate text={introduction.pronouns} />
         </span>
       </h1>
 
       <div className="contactTitle">
-        Experienced Software Engineer and Technical Leader
+        <Translate text={introduction.headline} />
       </div>
     </div>
   );

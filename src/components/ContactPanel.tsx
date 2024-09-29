@@ -36,8 +36,8 @@ export default function ContactPanel() {
           <FaLocationDot />
         </div>
         <div>
-          <a href={cvData.contact.locationUrl}>
-            <Translate text={cvData.contact.location} />
+          <a href={cvData.contact.location.url}>
+            <Translate text={cvData.contact.location.display} />
           </a>
         </div>
       </div>
@@ -56,8 +56,8 @@ export default function ContactPanel() {
           <FaGithub />
         </div>
         <div>
-          <a href={`https://github.com/${cvData.contact.github.login}`}>
-            {cvData.contact.github.login}
+          <a href={cvData.contact.github.url}>
+            {cvData.contact.github.display}
           </a>
         </div>
       </div>

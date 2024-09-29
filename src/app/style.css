@@ -224,43 +224,38 @@ h2 {
   white-space: pre;
 }
 
-.humanLanguages {
+.languages {
   list-style: none;
   margin: inherit;
   margin-block: 1em;
   padding: 0;
 }
 
-.humanLanguages li {
+.languages li {
   display: flex;
   flex-direction: row;
   align-items: baseline;
 }
 
-.humanLanguages li .languageName {
+.languages li .languageName {
   width: 4em;
 }
 
-.humanLanguages li .languageName::after {
+.languages li .languageName::after {
   content: ":";
 }
 
-.humanLanguages li .languageStars {
+.languages li .languageStars {
   position: relative;
   top: 0.1em;
   width: 5.5em;
 }
 
-.humanLanguages li .languageNote {
-  /* display: none; */
-  /* font-size: 80%; */
-}
-
-.humanLanguages li .languageNote:before {
+.languages li .languageNote:before {
   content: "(";
 }
 
-.humanLanguages li .languageNote:after {
+.languages li .languageNote:after {
   content: ")";
 }
 

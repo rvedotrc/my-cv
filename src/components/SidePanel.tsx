@@ -1,7 +1,7 @@
 import ContactPanel from "./ContactPanel";
 import EducationPanel from "./EducationPanel";
 import Headshot from "./Headshot";
-import HumanLanguages from "./HumanLanguages";
+import Languages from "./Languages";
 import ReferencesPanel from "./ReferencesPanel";
 import SkillsPanel from "./SkillsPanel";
 
@@ -11,7 +11,7 @@ export default function SidePanel() {
       <Headshot />
       <ContactPanel />
       <EducationPanel />
-      <HumanLanguages />
+      <Languages />
       <hr />
       <SkillsPanel />
       <hr />

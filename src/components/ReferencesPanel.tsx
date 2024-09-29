@@ -8,7 +8,7 @@ export default function ReferencesPanel() {
   return (
     <div className="referencesPanel">
       <p>
-        <Translate text={cvData.references} />
+        <Translate text={cvData.contact.references} />
       </p>
     </div>
   );
