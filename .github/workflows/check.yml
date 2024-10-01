@@ -24,4 +24,5 @@ jobs:
             ${{ runner.os }}-
 
       - run: npm install
+      - run: npm run lint --strict
       - run: npm run prettier:check

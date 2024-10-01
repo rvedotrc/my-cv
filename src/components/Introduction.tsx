@@ -7,9 +7,6 @@ export default function Introduction() {
     language,
   } = useContext(myContext);
 
-  const x = introduction.introText;
-  const y = x[language];
-
   return (
     <div className="introduction">
       <div className="introPanel">
