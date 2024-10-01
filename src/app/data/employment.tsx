@@ -168,7 +168,7 @@ export const employment: ReadonlyArray<Employment> = [
       ],
       en: [
         <>
-          Led an engineering team managing the BBC's online audio and video
+          Led an engineering team managing the BBC&apos;s online audio and video
           content, including the renowned iPlayer streaming service.
         </>,
         <>
@@ -182,7 +182,7 @@ export const employment: ReadonlyArray<Employment> = [
         </>,
         <>
           Extended the platform with new features, greater capacity, and
-          improved resilience, building on the project's success.
+          improved resilience, building on the project&apos;s success.
         </>,
       ],
     },
