@@ -3,13 +3,49 @@ import { TranslatedNode, TranslatedText } from "./translated";
 export type Employment = {
   readonly employerName: string;
   readonly jobTitle: string;
+  readonly unpaidVolunteer?: boolean;
   readonly location: TranslatedText;
   readonly start: TranslatedText;
-  readonly end: TranslatedText;
+  readonly end?: TranslatedText;
   readonly text: TranslatedNode;
 };
 
 export const employment: ReadonlyArray<Employment> = [
+  {
+    employerName: "Hack Your Future",
+    jobTitle: "Teacher / Mentor",
+    unpaidVolunteer: true,
+    location: {
+      da: "København",
+      en: "Copenhagen",
+    },
+    start: {
+      da: "august 2024",
+      en: "August 2024",
+    },
+    text: {
+      da: [
+        <>
+          Jeg underviser tech færdigheder til de studerende, der er tilmeldt i
+          kurset.
+        </>,
+        <>
+          Jeg fører forbedring i vores interne dokumentation og GitHub
+          repositories.
+        </>,
+      ],
+      en: [
+        <>
+          Teaching tech skills to refugees, immigrants, and others disadvantaged
+          in the job market.
+        </>,
+        <>
+          Driving improvements in internal documentation and repository
+          organisation.
+        </>,
+      ],
+    },
+  },
   {
     employerName: "Hedia",
     jobTitle: "Senior Software Engineer",
@@ -32,15 +68,6 @@ export const employment: ReadonlyArray<Employment> = [
           uoverensstemmelser og at samarbejde med teamet for at løse dem.
         </>,
         <>
-          Jeg forbedrede dokumentationen for at imødekomme lovkrav, og sikrede
-          compliance og facilitere bedre forståelse på tværs af teamet.
-        </>,
-        <>
-          Jeg automatiserede byggeprocesser ved at implementere nye værktøjer,
-          der førte til en stigende effektivitet og en reduktion af manuelle
-          fejl.
-        </>,
-        <>
           Jeg visualiserede systemarkitekturen innovativt og gav frisk indsigt,
           der hjalp teamet med at forstå platformen bedre.
         </>,
@@ -49,14 +76,6 @@ export const employment: ReadonlyArray<Employment> = [
         <>
           Enhanced product consistency by identifying discrepancies and
           collaborating with the team to resolve them.
-        </>,
-        <>
-          Improved documentation to meet regulatory requirements, ensuring
-          compliance and facilitating better understanding across the team.
-        </>,
-        <>
-          Automated build processes by implementing new tooling, increasing
-          efficiency and reducing manual errors.
         </>,
         <>
           Visualised system architecture innovatively, providing fresh insights
@@ -163,7 +182,7 @@ export const employment: ReadonlyArray<Employment> = [
         <>
           Under mit lederskab udvidede teamet platformen med nye funktioner,
           større kapacitet og forbedret modstandsdygtighed, der betød, at vi
-          sagtens kunne bygge videre på projektets succes.
+          kunne bygge videre på projektets succes.
         </>,
       ],
       en: [

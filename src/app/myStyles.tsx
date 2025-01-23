@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+const css = `@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 body {
   margin: 1em;
@@ -276,11 +276,11 @@ h2 {
 .employmentList {
   list-style: none;
   padding: 0;
-  margin-block: 2em 0;
+  margin-block: 1em 0;
 }
 
 .employmentList > li {
-  margin-bottom: 2em;
+  margin-bottom: 0.8em;
 }
 
 .employmentHeading {
@@ -296,6 +296,12 @@ h2 {
   font-size: 1.15em;
 }
 
+.employmentUnpaidVolunteer {
+  font-style: italic;
+  font-weight: lighter;
+  padding-inline-start: 2em;
+}
+
 .employmentText ul {
   list-style-type: disc;
   padding-inline-start: 1em;
@@ -309,4 +315,9 @@ h2 {
 .introPanel p,
 .employmentText ul li {
   line-height: 1.35;
+}
+`;
+
+export default function MyStyles() {
+  return <style dangerouslySetInnerHTML={{ __html: css }} />;
 }

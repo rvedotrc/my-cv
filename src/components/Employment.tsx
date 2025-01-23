@@ -24,9 +24,11 @@ export default function Employment() {
                 <Translate text={e.start} />
               </div>
               &nbsp;–&nbsp;
-              <div className="employmentEnd">
-                <Translate text={e.end} />
-              </div>
+              {e.end && (
+                <div className="employmentEnd">
+                  <Translate text={e.end} />
+                </div>
+              )}
             </div>
             <div className="employmentText">
               <ul>
@@ -35,6 +37,18 @@ export default function Employment() {
                 ))}
               </ul>
             </div>
+            {e.unpaidVolunteer && (
+              <p>
+                <em>
+                  <Translate
+                    text={{
+                      en: "This position is unpaid volunteer work",
+                      da: "Denne stilling er ulønnet og frivillig",
+                    }}
+                  />
+                </em>
+              </p>
+            )}
           </li>
         ))}
       </ol>
