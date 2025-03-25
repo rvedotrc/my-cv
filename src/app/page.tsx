@@ -51,17 +51,16 @@ export default function Home() {
           <div className="pitchText">
             <p>
               I am a dedicated software engineer specialising in back-end
-              development with full-stack proficiency. Over 30 years, I have
-              continually expanded my expertise across multiple languages and
-              technologies.
+              development with full-stack proficiency. For 8 years while at the
+              BBC, Java was my team's primary language for production code, as
+              we designed and built the BBC's online audio/video processing and
+              publication platform from scratch.
             </p>
             <p>
-              I excel at system design that improves security, scalability,
-              reliability, and extensibility, always striving to deliver
-              high-quality results. Through promoting standards, automation, and
-              consistency, I contribute to resilient systems and operational
-              excellence. I inspire engineering teams to work towards a clear
-              vision, and I thrive on fostering collaboration.
+              I love producing quality, secure, maintainable code, and taking
+              ownership all the way from conception to production to eventual
+              decommissioning. As well as learning from others, I love mentoring
+              those around me, using my experience to build up the whole team.
             </p>
           </div>
         </section>
