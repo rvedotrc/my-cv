@@ -51,16 +51,16 @@ export default function Home() {
           <div className="pitchText">
             <p>
               I am a dedicated software engineer specialising in back-end
-              development with full-stack proficiency. For 8 years while at the
-              BBC, Java was my team's primary language for production code, as
-              we designed and built the BBC's online audio/video processing and
-              publication platform from scratch.
+              development with full-stack proficiency. I have been using Ruby
+              for the last 15+ years, and Ruby on Rails and TypeScript for the
+              last 6 years, while working at Zendesk in Copenhagen. My go-to
+              tech stack for home projects these days is TypeScript with React.
             </p>
             <p>
               I love producing quality, secure, maintainable code, and taking
               ownership all the way from conception to production to eventual
-              decommissioning. As well as learning from others, I love mentoring
-              those around me, using my experience to build up the whole team.
+              decommissioning. I love sharing whatever I have learnt with those
+              around me, and learning from them.
             </p>
           </div>
         </section>

@@ -51,17 +51,16 @@ export default function Home() {
           <div className="pitchText">
             <p>
               Jeg er en dedikeret software ingeniør, der specialiserer mig i
-              back-end udvikling med dygtighed også til full-stack. I 8 år hos
-              BBC var Java mit teams primært sprog til production kode, mens vi
-              designede og byggede BBCs platform til online lyd og video helt
-              fra bunden.
+              back-end udvikling med dygtighed også til full-stack. Jeg har 15
+              års erfaring med Ruby, og 6 år med Ruby on Rails og TypeScript, da
+              jeg var ansat hos Zendesk i København. Min go-to tech stack til
+              hjemmeprojekter disse dage er TypeScript med React.
             </p>
             <p>
               Jeg elsker at lave kode til høj kvalitet, sikkerhed og
               vedligeholdelse, og at tage ejerskab hele vejen fra undfangelse
-              til production til en endelig nedlæggelse. Samt med at lære fra
-              andre, elsker jeg at være mentor til dem omkring mig, sådan at jeg
-              bruger min erfaring til at opbygge og forstyrke hele teamet.
+              til production til en endelig nedlæggelse. Jeg elsker at dele
+              ting, som jeg lærer, med folk omkring mig, også at lære af dem.
             </p>
           </div>
         </section>
