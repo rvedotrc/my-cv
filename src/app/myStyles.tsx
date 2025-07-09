@@ -139,9 +139,22 @@ footer, div.myFooter {
   font-size: smaller;
 }
 
+.switcher {
+  display: block;
+  border: 3px double black;
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  padding-inline-end: 2em;
+}
+
 @media print {
   .header {
     margin-block-start: 3em;
+  }
+
+  .switcher {
+    display: none;
   }
 }
 

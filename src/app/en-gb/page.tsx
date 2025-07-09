@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-css-tags */
-"use client";
 
-import type { PropsWithChildren } from "react";
+import type { PropsWithChildren, ReactNode } from "react";
 import MyStyles from "../myStyles";
+import Switcher from "../switcher/page";
 
 const Sk = (props: PropsWithChildren) => (
   <span className="skillWord">{props.children}</span>
@@ -26,7 +26,13 @@ const F = (props: { p: number; before?: number; after?: number }) => (
   </>
 );
 
-export default function Home() {
+export default function Home({
+  pitchTitle,
+  pitchText,
+}: {
+  pitchTitle: ReactNode;
+  pitchText: ReactNode;
+}) {
   return (
     <html>
       <head>
@@ -35,6 +41,8 @@ export default function Home() {
       </head>
 
       <body>
+        <Switcher />
+
         <section className="header">
           <h1>Rachel Evans</h1>
 
@@ -46,23 +54,9 @@ export default function Home() {
         </section>
 
         <section className="pitch">
-          <h2>Experienced Software Engineer and Technical Leader</h2>
+          <h2>{pitchTitle}</h2>
 
-          <div className="pitchText">
-            <p>
-              I am a dedicated software engineer specialising in back-end
-              development with full-stack proficiency. I have been using Ruby
-              for the last 15+ years, and Ruby on Rails and TypeScript for the
-              last 6 years, while working at Zendesk in Copenhagen. My go-to
-              tech stack for home projects these days is TypeScript with React.
-            </p>
-            <p>
-              I love producing quality, secure, maintainable code, and taking
-              ownership all the way from conception to production to eventual
-              decommissioning. I love sharing whatever I have learnt with those
-              around me, and learning from them.
-            </p>
-          </div>
+          <div className="pitchText">{pitchText}</div>
         </section>
 
         <section className="skills">
@@ -523,28 +517,22 @@ export default function Home() {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-
             const pageHeight = 1108;
             const offsetFromBottom = 60;
 
             const poll = (tweak) => {
+              console.log(window.location.pathname);
 
+              [...document.getElementsByTagName("footer")].forEach((f, i) => {
+                const actualBottom = f.offsetTop + f.offsetHeight;
+                const desiredBottom = ((i + 1) * pageHeight) - offsetFromBottom;
 
-          [...document.getElementsByTagName("footer")].forEach((f, i) => {
+                const paddingNeeded = desiredBottom - actualBottom;
+                console.log({ i, f, actualBottom, desiredBottom, paddingNeeded });
+              });
+            };
 
-          const actualBottom = f.offsetTop + f.offsetHeight;
-          const desiredBottom = ((i + 1) * pageHeight) - offsetFromBottom;
-
-          const paddingNeeded = desiredBottom - actualBottom;
-          console.log({ i, f, actualBottom, desiredBottom, paddingNeeded });
-
-
-          });
-
-          };
-
-          poll(true);
-
+            poll(true);
           `,
           }}
         />
