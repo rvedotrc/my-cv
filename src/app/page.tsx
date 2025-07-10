@@ -1,5 +1,6 @@
 import Link from "next/link";
 import MyStyles from "./myStyles";
+import { languages, variants } from "@/axes";
 
 export default function Page() {
   return (
@@ -10,12 +11,17 @@ export default function Page() {
       </head>
       <body>
         <ul>
-          {["java", "ruby-and-typescript"].map((k) => (
+          {variants.map((k) => (
             <li key={k}>
-              <Link href={`/en-gb/${k}`}>en-gb</Link>
-              {" | "}
-              <Link href={`/da-dk/${k}`}>da-dk</Link>
-              {" — "}
+              {languages.map((l) => [
+                <Link
+                  key={l}
+                  href={`/${l}/${k}`}
+                  style={{ marginInlineEnd: "1em" }}
+                >
+                  {l}
+                </Link>,
+              ])}
               {k}
             </li>
           ))}
