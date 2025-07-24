@@ -5,8 +5,9 @@
   "scripts": {
     "test:prettier": "prettier --check .",
     "format": "prettier --write .",
-    "dev": "next dev",
+    "dev": "next dev --port 3001",
     "build": "next build",
+    "pdf": "cd print && tsc && rm -rf var && mkdir var && node dist/auto.js && cd .. && ls -l print/var/*",
     "start": "next start",
     "test": "concurrently --group pnpm:test:* && pnpm test-node",
     "test-node": ":",
@@ -15,6 +16,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "next": "14.2.13",
+    "puppeteer": "^24.12.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0"

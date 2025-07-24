@@ -67,7 +67,7 @@ export default function Home({
               <h3>Languages, Frameworks, and Infrastructure</h3>
               <ul>
                 <li>Java, Ruby, Ruby on Rails, bash, zsh, C, Python</li>
-                <li>TypeScript / JavaScript, Node, React, Webpack</li>
+                <li>TypeScript / JavaScript, Node, React, Webpack, Angular</li>
                 <li>HTML, CSS</li>
                 <li>SQL: MySQL, Oracle, Postgres, MS SQL</li>
                 <li>Redis, memcached, Kafka, ActiveMQ</li>
@@ -81,7 +81,7 @@ export default function Home({
                   AWS: EC2, S3, Lambda, SQS, SNS, RDS, IAM, VPC, KMS,
                   CloudFormation, Route53, Glacier, DynamoDB, SimpleDB, ACM
                 </li>
-                <li>Docker, Kubernetes</li>
+                <li>Docker, Kubernetes, Azure, GCP (Google)</li>
                 <li>Git, GitHub Actions, CI/CD pipelines, Jenkins</li>
                 <li>Linux Networking, Sysadmin</li>
               </ul>
