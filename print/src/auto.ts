@@ -1,5 +1,8 @@
 import puppeteer, { type Browser } from "puppeteer";
 import * as fs from "node:fs";
+import { execFile, execFileSync, spawnSync } from "node:child_process";
+import { execArgv } from "node:process";
+import { consumers } from "node:stream";
 
 const savePageToPDF = async (
   browser: Browser,
@@ -43,12 +46,26 @@ const savePageToPDF = async (
   }
 };
 
+const getVersion = async (): Promise<string> => {
+  const head = execFileSync("git", ["rev-parse", "HEAD"], {
+    encoding: "utf-8",
+  }).trim();
+
+  const isClean = execFileSync("git", ["status"], {
+    encoding: "utf-8",
+  }).includes("nothing to commit, working tree clean");
+
+  return `${head}${isClean ? "" : "-dirty"}`;
+};
+
 export const printToPdfs = async (): Promise<void> => {
   const browser = await puppeteer.launch({
     browser: "firefox",
     headless: true,
     dumpio: false,
   });
+
+  const version = await getVersion();
 
   try {
     await Promise.all(
@@ -58,7 +75,7 @@ export const printToPdfs = async (): Promise<void> => {
             savePageToPDF(
               browser,
               `http://localhost:3001/${language}/${variant}`,
-              `var/cv.${variant}.${language}.pdf`,
+              `var/cv.${version}.${language}.${variant}.pdf`,
             ),
           ),
         )
