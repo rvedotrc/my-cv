@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "rootDir": ".",
+    "outDir": "dist/"
+  },
+  "include": ["src/pdf/**/*.ts", "src/axes.ts"],
+  "exclude": ["node_modules"]
+}

@@ -35,5 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/print/dist/
-/print/var/
+/dist/
+/var/

@@ -1,8 +1,7 @@
 import puppeteer, { type Browser } from "puppeteer";
 import * as fs from "node:fs";
-import { execFile, execFileSync, spawnSync } from "node:child_process";
-import { execArgv } from "node:process";
-import { consumers } from "node:stream";
+import { execFileSync } from "node:child_process";
+import { variants, languages } from "../axes";
 
 const savePageToPDF = async (
   browser: Browser,
@@ -69,13 +68,13 @@ export const printToPdfs = async (): Promise<void> => {
 
   try {
     await Promise.all(
-      ["java", "ruby-and-typescript"]
+      variants
         .map((variant) =>
-          ["en-gb", "da-dk"].map((language) =>
+          languages.map((language) =>
             savePageToPDF(
               browser,
               `http://localhost:3001/${language}/${variant}`,
-              `var/cv.${version}.${language}.${variant}.pdf`,
+              `var/pdf/cv.${version}.${language}.${variant}.pdf`,
             ),
           ),
         )
