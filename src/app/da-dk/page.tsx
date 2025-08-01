@@ -488,7 +488,7 @@ export default function Home({
             </li>
             <li>
               <span>GitHub:</span>
-              <span className="code">@rvedotrc</span>
+              <span className="code">@rvedotrc &amp; @blaahaj</span>
             </li>
             <li>
               <span>Bopæl:</span>

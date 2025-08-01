@@ -1,14 +1,22 @@
+import { languages, variants } from "@/axes";
 import Link from "next/link";
+import styles from "./page.module.css";
 
 export default function Switcher() {
   return (
     <div className="switcher">
       <ul>
-        {["java", "ruby-and-typescript"].map((k) => (
+        {variants.map((k) => (
           <li key={k}>
-            <Link href={`/en-gb/${k}`}>en-gb</Link>
-            {" | "}
-            <Link href={`/da-dk/${k}`}>da-dk</Link>
+            {languages.map((lang) => (
+              <Link
+                className={styles.language}
+                key={lang}
+                href={`/${lang}/${k}`}
+              >
+                {lang}
+              </Link>
+            ))}
             {" — "}
             {k}
           </li>

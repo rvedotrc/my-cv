@@ -7,7 +7,7 @@
     "format": "prettier --write .",
     "dev": "next dev --port 3001",
     "build": "next build",
-    "pdf": "cd print && tsc && rm -rf var && mkdir var && node dist/auto.js && cd .. && ls -l print/var/*",
+    "pdf": "tsc --project tsconfig.pdf.json && rm -rf var/pdf && mkdir -p var/pdf && node dist/src/pdf/generate.js && ls -l var/pdf/*",
     "start": "next start",
     "test": "concurrently --group pnpm:test:* && pnpm test-node",
     "test-node": ":",
