@@ -10,7 +10,7 @@
     "pdf": "tsc --project tsconfig.pdf.json && rm -rf var/pdf && mkdir -p var/pdf && node dist/src/pdf/generate.js && ls -l var/pdf/*",
     "start": "next start",
     "test": "concurrently --group pnpm:test:* && pnpm test-node",
-    "test-node": ":",
+    "test-node": "echo 'WARNING: no node tests defined in this project'",
     "test:lint": "next lint"
   },
   "dependencies": {
