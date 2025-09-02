@@ -1,2 +1,7 @@
 export const languages = ["en-gb", "da-dk"] as const;
-export const variants = ["java", "ruby-and-typescript", "media"] as const;
+export const variants = [
+  "java",
+  "ruby-and-typescript",
+  "media",
+  "typescript-and-react",
+] as const;
