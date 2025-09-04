@@ -1,43 +1,45 @@
-const css = `@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
-body {
+/* .xx.body { */
+.cv {
   max-width: min(40em, calc(100vw - 4em));
   margin-inline: auto;
   margin-block-start: 2em;
   font-family: "Lato", sans-serif;
 }
 
-h1, h2, h3, h4 {
+.cv h1,
+.cv h2,
+.cv h3,
+.cv h4 {
   margin-block: 0;
 }
 
-h1,h2,h3,h4,p,section, ul, ol, li, footer {
+/* h1,h2,h3,h4,p,section, ul, ol, li, footer {
   // border: 1px dotted black;
   // background: rgba(0, 0, 0, 4%);
   // padding: 1px;
-}
+} */
 
 .code {
   font-family: "Lucida Console", "Courier New", monospace;
   font-weight: bold;
 }
 
-// @media screen {
+/* // @media screen {
 //   header, footer, thead, tfoot {
 //     display: none;
 //   }
-// }
+// } */
 
-section {
+.cv section {
   margin-block-end: 2em;
 }
-
-
 
 /* Section-specific */
 
 .header {
-  // background-color: #ffe0ff;
+  /* // background-color: #ffe0ff; */
   display: flex;
   flex-direction: row;
 
@@ -103,7 +105,7 @@ section {
   }
 }
 
-.further-details {
+.furtherDetails {
   ul {
     padding-left: 0;
   }
@@ -132,8 +134,9 @@ section {
   font-weight: bold;
 }
 
-footer, div.myFooter {
-  x-background: pink !important;
+.cv footer,
+div.myFooter {
+  /* x-background: pink !important; */
   width: 100%;
   text-align: center;
   font-size: smaller;
@@ -156,10 +159,4 @@ footer, div.myFooter {
   .switcher {
     display: none;
   }
-}
-
-`;
-
-export default function MyStyles() {
-  return <style dangerouslySetInnerHTML={{ __html: css }} />;
 }

@@ -4,20 +4,19 @@ import styles from "./page.module.css";
 
 export default function Switcher() {
   return (
-    <div className="switcher">
+    <div className={styles.switcher}>
       <ul>
         {variants.map((k) => (
           <li key={k}>
-            {languages.map((lang) => (
+            {languages.map((l) => [
               <Link
-                className={styles.language}
-                key={lang}
-                href={`/${lang}/${k}`}
+                key={l}
+                href={`/${l}/${k}`}
+                style={{ marginInlineEnd: "1em" }}
               >
-                {lang}
-              </Link>
-            ))}
-            {" — "}
+                {l}
+              </Link>,
+            ])}
             {k}
           </li>
         ))}
