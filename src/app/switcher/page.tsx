@@ -1,26 +1,33 @@
-import { languages, variants } from "@/axes";
 import Link from "next/link";
 import styles from "./page.module.css";
+import { scanAxes } from "@/axes";
 
-export default function Switcher() {
+export default async function Switcher() {
+  const scan = await scanAxes();
+
   return (
-    <div className={styles.switcher}>
-      <ul>
-        {variants.map((k) => (
-          <li key={k}>
-            {languages.map((l) => [
+    <ul className={styles.switcher}>
+      {scan.languages.map(async (l) => (
+        <li key={l}>
+          {scan.variants.map((k) =>
+            scan.comboExists({ variant: k, language: l }) ? (
               <Link
-                key={l}
-                href={`/${l}/${k}`}
+                key={k}
+                href={`/${k}/${l}`}
+                className={styles.language}
                 style={{ marginInlineEnd: "1em" }}
               >
-                {l}
-              </Link>,
-            ])}
-            {k}
-          </li>
-        ))}
-      </ul>
-    </div>
+                {k}
+              </Link>
+            ) : (
+              <span key={k} style={{ marginInlineEnd: "1em", opacity: 0.3 }}>
+                {k}
+              </span>
+            ),
+          )}
+          {l}
+        </li>
+      ))}
+    </ul>
   );
 }
