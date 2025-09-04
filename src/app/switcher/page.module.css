@@ -1,3 +1,15 @@
-.language {
+.switcher {
+  position: fixed;
+  left: 1em;
+  top: 1em;
+}
+
+.switcher .language {
   margin-inline-end: 0.4em;
+}
+
+@media print {
+  .switcher {
+    display: none;
+  }
 }
