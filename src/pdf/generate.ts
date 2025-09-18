@@ -1,7 +1,7 @@
 import puppeteer, { type Browser } from "puppeteer";
 import * as fs from "node:fs";
 import { execFileSync } from "node:child_process";
-import { variants, languages } from "../axes";
+import { scanAxes } from "../axes";
 
 const savePageToPDF = async (
   browser: Browser,
@@ -66,16 +66,20 @@ export const printToPdfs = async (): Promise<void> => {
 
   const version = await getVersion();
 
+  const scan = await scanAxes();
+
   try {
     await Promise.all(
-      variants
+      scan.variants
         .map((variant) =>
-          languages.map((language) =>
-            savePageToPDF(
-              browser,
-              `http://localhost:3001/${language}/${variant}`,
-              `var/pdf/cv.${version}.${language}.${variant}.pdf`,
-            ),
+          scan.languages.map((language) =>
+            scan.comboExists({ language, variant })
+              ? savePageToPDF(
+                  browser,
+                  `http://localhost:3001/${language}/${variant}`,
+                  `var/pdf/cv.${version}.${language}.${variant}.pdf`,
+                )
+              : null,
           ),
         )
         .flat(),
