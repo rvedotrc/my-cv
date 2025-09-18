@@ -7,25 +7,28 @@ export default async function Switcher() {
 
   return (
     <ul className={styles.switcher}>
-      {scan.languages.map(async (l) => (
-        <li key={l}>
-          {scan.variants.map((k) =>
-            scan.comboExists({ variant: k, language: l }) ? (
+      {scan.variants.map((variant) => (
+        <li key={variant}>
+          {scan.languages.map(async (language) =>
+            scan.comboExists({ variant, language }) ? (
               <Link
-                key={k}
-                href={`/${k}/${l}`}
+                key={language}
+                href={`/${variant}/${language}`}
                 className={styles.language}
-                style={{ marginInlineEnd: "1em" }}
+                style={{ marginInlineEnd: "0.5em" }}
               >
-                {k}
+                {language}
               </Link>
             ) : (
-              <span key={k} style={{ marginInlineEnd: "1em", opacity: 0.3 }}>
-                {k}
+              <span
+                key={language}
+                style={{ marginInlineEnd: "0.5em", opacity: 0.3 }}
+              >
+                {language}
               </span>
             ),
           )}
-          {l}
+          {variant}
         </li>
       ))}
     </ul>
