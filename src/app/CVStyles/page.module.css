@@ -6,6 +6,7 @@
   margin-inline: auto;
   margin-block-start: 2em;
   font-family: "Lato", sans-serif;
+  position: relative;
 }
 
 .cv h1,
@@ -158,5 +159,17 @@ div.myFooter {
 
   .switcher {
     display: none;
+  }
+}
+
+.pagePositionGuide {
+  visibility: hidden;
+  display: none;
+}
+
+@media screen {
+  .pagePositionGuide {
+    visibility: visible;
+    display: block;
   }
 }

@@ -12,6 +12,17 @@ const Sk = (props: PropsWithChildren) => (
 const F = (props: { p: number; before?: number; after?: number }) => (
   <>
     <div
+      className={CVStyles.pagePositionGuide}
+      style={{
+        borderTop: "1px solid red",
+        left: "0",
+        right: "0",
+        height: "1em",
+        position: "absolute",
+        top: `${props.p * 1108 - 100.5}px`,
+      }}
+    />
+    <div
       style={{
         // backgroundColor: "red",
         height: `${props.before ?? 0}px`,
