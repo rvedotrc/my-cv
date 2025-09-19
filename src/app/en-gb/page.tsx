@@ -4,6 +4,7 @@ import type { PropsWithChildren, ReactNode } from "react";
 import CVStyles from "../CVStyles/page.module.css";
 import Switcher from "../switcher/page";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 const Sk = (props: PropsWithChildren) => (
   <span className={CVStyles.skillWord}>{props.children}</span>
@@ -49,6 +50,8 @@ export default function Home({
   pitchTitle: ReactNode;
   pitchText: ReactNode;
 }) {
+  if (!pitchText || !pitchTitle) return redirect("/");
+
   return (
     <div lang="en-gb" className={CVStyles.cv}>
       <Switcher />
@@ -125,37 +128,36 @@ export default function Home({
 
         <ol>
           <li>
-            <h3>Volunteer Teacher / Mentor, Hack Your Future</h3>
+            <h3>Volunteer Mentor, Hack Your Future</h3>
             <h4>Copenhagen, Denmark; August 2024 – present</h4>
             <p>
-              Hack Your Future offers a coding “bootcamp”-style course to
-              refugees, immigrants, and others disadvantaged in the job market.
-              {/* I first encountered the project via my work at Zendesk
-                (who partner with Hack Your Future) in 2019; after I left
-                Zendesk, I re-engaged with HYF directly. */}
+              Hack Your Future runs a program of courses designed to train
+              refugees, immigrants, and others disadvantaged in the Danish job
+              market with the skills required to land a tech job.
             </p>
             <p>
-              {/* Since then  */}I have been active in identifying things which
-              add friction to the volunteer experience, communicating those
-              issues, then proposing and (where possible) implementing
-              solutions.
-              {/* For example, there are more than 100 repositories in
-                their GitHub organisation, yet very little information on what
-                many of the repositories are (e.g. strategy documents, public
-                web site, curriculum, teaching materials, students’ projects,
-                …), so I proposed a combination of archiving and adding “topic”
-                labels to help. Or, as another example, it would be helpful it
-                were easier to identify who does what in the organisation, so
-                it’s easier to identify sources of help. */}
+              I work with the core active group of mentors as we shape the
+              program and author the training materials, and ultimately teaching
+              the sessions. I am also active in identifying things which add
+              friction to the volunteer experience, such as missing or unclear
+              documentation, or "cruft" which would better be removed or
+              archived.
             </p>
             <p>
-              I am active in the mentor group, and participate in discussions
-              and workshops around how to develop the curriculum.
+              I also sometimes turn up to the weekly meetings solely to hang out
+              and socialise, and provide guidance where requested.
             </p>
+          </li>
+
+          <li>
+            <h3>(Unpaid) Senior Software Engineer, Estatetool</h3>
+            <h4>Copenhagen, Denmark; June 2025 — June 2025</h4>
             <p>
-              I have also led some classes (e.g. teaching Git), and sometimes
-              turn up to the weekly meetings purely to hang out and socialise,
-              and provide guidance where requested.
+              Estatetool's codebase took the form of a large Java / Spring Boot
+              monolith, with zero automated testing. I created some initial
+              automated tests for their core business-critical workflow, using
+              Playwright browser automation. The tests verified both with the
+              product's UI set to Danish, and also English.
             </p>
           </li>
 
@@ -185,6 +187,8 @@ export default function Home({
             </p>
           </li>
 
+          <F p={2} before={93} after={110} />
+
           <li>
             <h3>Senior Software Engineer, Zendesk</h3>
             <h4>Copenhagen, Denmark; February 2019 – May 2024</h4>
@@ -196,8 +200,6 @@ export default function Home({
               AWS. Additionally, various microservices in Ruby on Rails or
               TypeScript, and front end components in React.
             </p>
-
-            <F p={2} before={103} after={110} />
 
             <p>
               Zendesk makes customer relationship management software (which is
@@ -352,6 +354,8 @@ export default function Home({
               video for the London 2012 Olympic Games.
             </p>
 
+            <F p={3} before={56} after={110} />
+
             <p>
               Throughout this time, Media Services was composed of three agile
               teams, one of which was led by me. My work included people
@@ -361,8 +365,6 @@ export default function Home({
               communicating the vision to the team; planning and refining; and
               as much as possible, also being an individual code contributor.
             </p>
-
-            <F p={3} before={70.5} after={110} />
 
             <h5>Other work</h5>
 
@@ -384,6 +386,19 @@ export default function Home({
               to 50, 5 people to 200; internal to my team, or my department, or
               all of BBC engineering, or external / public. I was asked to speak
               at BBC open days, tech summits, recruitment days, and more.
+            </p>
+          </li>
+
+          <li>
+            <h3>Contributor, MusicBrainz</h3>
+            <h4>Online; unpaid and in my spare time, 2001 — 2006</h4>
+            <p>
+              For five years I intensively volunteered my time to the
+              MusicBrainz project, being the lead (and often only) maintainer of
+              the server (Perl, Apache, mod_perl, PostgreSQL) and infrastructure
+              (mail, monitoring, security, etc). I was by far the most active
+              code contributor for several years, improving data consistency,
+              performance, and adding features.
             </p>
           </li>
 
@@ -411,11 +426,11 @@ export default function Home({
               Because this was an ISP, while here I learned much more about
               protocols: the IP stack, SMTP, IMAP, RADIUS, DNS, HTTP, SSH, and
               many more. A colleague and I redesigned and rebuilt all of our
-              core application services (DNS, web, mail, etc) for high
-              availability and ease of operation.
+              {/* core application services (DNS, web, mail, etc) for high
+              availability and ease of operation. */}
             </p>
 
-            <p>
+            {/* <p>
               I single-handedly created a support ticketing system, adopted by
               our customer support team; and then went on to create a series of
               sources-of-truth for various internal data sets. Circa 2005, the
@@ -424,7 +439,7 @@ export default function Home({
               the software behind the product, including web-based management
               and administration, and real-time network monitoring and
               connection control.
-            </p>
+            </p> */}
           </li>
 
           <F p={4} before={176.5} after={110} />

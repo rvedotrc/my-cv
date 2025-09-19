@@ -4,6 +4,7 @@ import type { PropsWithChildren, ReactNode } from "react";
 import CVStyles from "../CVStyles/page.module.css";
 import Switcher from "../switcher/page";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 const Sk = (props: PropsWithChildren) => (
   <span className={CVStyles.skillWord}>{props.children}</span>
@@ -49,6 +50,8 @@ export default function Home({
   pitchTitle: ReactNode;
   pitchText: ReactNode;
 }) {
+  if (!pitchText || !pitchTitle) return redirect("/");
+
   return (
     <div lang="da-dk" className={CVStyles.cv}>
       <Switcher />
