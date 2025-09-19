@@ -153,11 +153,12 @@ export default function Home({
             <h3>(Unpaid) Senior Software Engineer, Estatetool</h3>
             <h4>Copenhagen, Denmark; June 2025 — June 2025</h4>
             <p>
-              Estatetool's codebase took the form of a large Java / Spring Boot
-              monolith, with zero automated testing. I created some initial
-              automated tests for their core business-critical workflow, using
-              Playwright browser automation. The tests verified both with the
-              product's UI set to Danish, and also English.
+              Estatetool's codebase took the form of a large{" "}
+              <Sk>Java / Spring Boot</Sk> monolith, but with next to no
+              automated testing. I created some initial automated tests for
+              their core business-critical workflow, using <Sk>Playwright</Sk>{" "}
+              browser automation. The tests verified both with the product's UI
+              set to Danish, and also when set to English.
             </p>
           </li>
 
@@ -187,7 +188,7 @@ export default function Home({
             </p>
           </li>
 
-          <F p={2} before={93} after={110} />
+          <F p={2} before={92} after={110} />
 
           <li>
             <h3>Senior Software Engineer, Zendesk</h3>
@@ -354,7 +355,7 @@ export default function Home({
               video for the London 2012 Olympic Games.
             </p>
 
-            <F p={3} before={56} after={110} />
+            <F p={3} before={58} after={110} />
 
             <p>
               Throughout this time, Media Services was composed of three agile
@@ -366,20 +367,6 @@ export default function Home({
               as much as possible, also being an individual code contributor.
             </p>
 
-            <h5>Other work</h5>
-
-            <p>
-              At various times, I was also my department’s development
-              environment sysadmin; I worked on the “/programmes” project,
-              publishing one page for each BBC programme using a standard,
-              automated publishing pipeline based on <Sk>Ruby on Rails</Sk> and{" "}
-              <Sk>Perl</Sk>; and I coached a scrum team for 3 months, acting as
-              a “guest” principal engineer, helping start the team in the right
-              direction, improving scrum efficiency. Crucially, I provided
-              guidance to the team’s other principal engineer, who would carry
-              on after I had left.
-            </p>
-
             <p>
               I delivered many effective and engaging <Sk>presentations</Sk>, in
               various contexts and to various audiences: anything from 5 minutes
@@ -387,18 +374,33 @@ export default function Home({
               all of BBC engineering, or external / public. I was asked to speak
               at BBC open days, tech summits, recruitment days, and more.
             </p>
+
+            <p>
+              In my last months there, I coached a scrum team, acting as a
+              “guest” principal engineer. In this role I was able to help start
+              the team in the right direction, for example by improving scrum
+              efficiency. Crucially, I provided guidance to the team’s other
+              principal engineer, who would carry on after I had left.
+            </p>
           </li>
 
           <li>
-            <h3>Contributor, MusicBrainz</h3>
-            <h4>Online; unpaid and in my spare time, 2001 — 2006</h4>
+            <h3>Voluntary Open Source Contributor, MusicBrainz</h3>
+            <h4>Online; in my spare time, 2001 — 2006</h4>
             <p>
-              For five years I intensively volunteered my time to the
-              MusicBrainz project, being the lead (and often only) maintainer of
-              the server (Perl, Apache, mod_perl, PostgreSQL) and infrastructure
-              (mail, monitoring, security, etc). I was by far the most active
-              code contributor for several years, improving data consistency,
-              performance, and adding features.
+              MusicBrainz aims to be a comprehensive and open database of music.
+              Originally founded in response to the restrictions placed on the
+              Compact Disc Database, the project then grew to cover a wide swath
+              of music-related data.
+            </p>
+            <p>
+              For five years I intensively volunteered my time to this project,
+              being the lead (and often only) maintainer of both the web server
+              (<Sk>Perl, Apache, mod_perl, PostgreSQL</Sk>), database, and other
+              infrastructure (mail, monitoring, security, etc). I was by far the
+              most active code contributor for several years, improving data
+              consistency, performance, security, scalability, as well as adding
+              many new features.
             </p>
           </li>
 
@@ -408,41 +410,23 @@ export default function Home({
               Milton Keynes, United Kingdom; December 2000 – September 2007
             </h4>
             <p>
-              Power Internet was an established Internet service provider, and
-              also provided bare metal server hosting and bespoke web site
-              development. The code was almost always in <Sk>Perl</Sk> with{" "}
-              <Sk>MySQL</Sk>.
+              Power Internet was an Internet service provider that also provided
+              bare metal server hosting and bespoke web site development. My
+              role was initially on those bespoke web sites, though it quickly
+              grew to focus instead on development practices, maintenance of the
+              servers providing our core services (mail, web hosting, DNS,
+              authentication, etc), and the creation and maintenance of several
+              critical internal web sites. The code was almost always in{" "}
+              <Sk>Perl</Sk> with <Sk>MySQL</Sk>.
             </p>
 
             <p>
-              I pioneered the creation and use of well-built, well-tested
-              reusable library code between projects, thus improving code
-              security, speed of development, and portability of programmer
-              skills between projects. I also promoted product security via
-              improved validation, careful encoding, and so forth.
+              I also learned about various Internet protocols: the IP stack,
+              SMTP, IMAP, RADIUS, DNS, HTTP, SSH, and so on.
             </p>
-
-            <p>
-              Because this was an ISP, while here I learned much more about
-              protocols: the IP stack, SMTP, IMAP, RADIUS, DNS, HTTP, SSH, and
-              many more. A colleague and I redesigned and rebuilt all of our
-              {/* core application services (DNS, web, mail, etc) for high
-              availability and ease of operation. */}
-            </p>
-
-            {/* <p>
-              I single-handedly created a support ticketing system, adopted by
-              our customer support team; and then went on to create a series of
-              sources-of-truth for various internal data sets. Circa 2005, the
-              company launched their flagship B2B product, providing businesses
-              with high-availability high-speed WANs. I responsible for all of
-              the software behind the product, including web-based management
-              and administration, and real-time network monitoring and
-              connection control.
-            </p> */}
           </li>
 
-          <F p={4} before={176.5} after={110} />
+          <F p={4} before={52} after={110} />
 
           <li>
             <h3>Developer, Radius Retail</h3>
@@ -529,7 +513,7 @@ export default function Home({
         <p>References available on request</p>
       </section>
 
-      <F p={5} before={91.5} after={0} />
+      <F p={5} before={92} after={0} />
 
       <script
         dangerouslySetInnerHTML={{
