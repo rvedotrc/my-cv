@@ -120,7 +120,7 @@ export default function Home({
         </ul>
       </section>
 
-      <F p={1} before={50} after={150} />
+      <F p={1} before={50} after={110} />
 
       <section className={CVStyles.employment}>
         <h2>Ansættelseshistorie</h2>
@@ -200,7 +200,7 @@ export default function Home({
               TypeScript, og frontend-komponenter i React.
             </p>
 
-            <F p={2} before={63} after={150} />
+            <F p={2} before={103} after={110} />
 
             <p>
               Zendesk laver software til styring af kunderelationer (som kaldes
@@ -369,7 +369,7 @@ export default function Home({
               også at være en individ kode bidragyder.
             </p>
 
-            <F p={3} before={31} after={150} />
+            <F p={3} before={70.5} after={110} />
 
             <h5>Yderligere arbejde</h5>
 
@@ -436,7 +436,7 @@ export default function Home({
             </p>
           </li>
 
-          <F p={4} before={136} after={150} />
+          <F p={4} before={176.5} after={110} />
 
           <li>
             <h3>Udvikler, Radius Retail</h3>
@@ -523,7 +523,7 @@ export default function Home({
         <p>Referencer oplyses gerne på opfordring</p>
       </section>
 
-      <F p={5} before={33} after={10} />
+      <F p={5} before={72} after={0} />
 
       <script
         dangerouslySetInnerHTML={{

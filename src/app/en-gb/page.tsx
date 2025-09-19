@@ -118,7 +118,7 @@ export default function Home({
         </ul>
       </section>
 
-      <F p={1} before={50} after={150} />
+      <F p={1} before={50} after={110} />
 
       <section className={CVStyles.employment}>
         <h2>Employment history</h2>
@@ -197,7 +197,7 @@ export default function Home({
               TypeScript, and front end components in React.
             </p>
 
-            <F p={2} before={63} after={150} />
+            <F p={2} before={103} after={110} />
 
             <p>
               Zendesk makes customer relationship management software (which is
@@ -362,7 +362,7 @@ export default function Home({
               as much as possible, also being an individual code contributor.
             </p>
 
-            <F p={3} before={31} after={150} />
+            <F p={3} before={70.5} after={110} />
 
             <h5>Other work</h5>
 
@@ -427,7 +427,7 @@ export default function Home({
             </p>
           </li>
 
-          <F p={4} before={136} after={150} />
+          <F p={4} before={176.5} after={110} />
 
           <li>
             <h3>Developer, Radius Retail</h3>
@@ -514,7 +514,7 @@ export default function Home({
         <p>References available on request</p>
       </section>
 
-      <F p={5} before={52} after={10} />
+      <F p={5} before={91.5} after={0} />
 
       <script
         dangerouslySetInnerHTML={{
