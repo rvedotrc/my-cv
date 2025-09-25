@@ -13,7 +13,7 @@ export default async function Switcher() {
             scan.comboExists({ variant, language }) ? (
               <Link
                 key={language}
-                href={`/${variant}/${language}`}
+                href={`/${language}/${variant}`}
                 className={styles.language}
                 style={{ marginInlineEnd: "0.5em" }}
               >

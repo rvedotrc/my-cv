@@ -4,6 +4,7 @@ import type { PropsWithChildren, ReactNode } from "react";
 import CVStyles from "../CVStyles/page.module.css";
 import Switcher from "../switcher/page";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 const Sk = (props: PropsWithChildren) => (
   <span className={CVStyles.skillWord}>{props.children}</span>
@@ -11,6 +12,17 @@ const Sk = (props: PropsWithChildren) => (
 
 const F = (props: { p: number; before?: number; after?: number }) => (
   <>
+    <div
+      className={CVStyles.pagePositionGuide}
+      style={{
+        borderTop: "1px solid red",
+        left: "0",
+        right: "0",
+        height: "1em",
+        position: "absolute",
+        top: `${props.p * 1108 - 100.5}px`,
+      }}
+    />
     <div
       style={{
         // backgroundColor: "red",
@@ -38,6 +50,8 @@ export default function Home({
   pitchTitle: ReactNode;
   pitchText: ReactNode;
 }) {
+  if (!pitchText || !pitchTitle) return redirect("/");
+
   return (
     <div lang="da-dk" className={CVStyles.cv}>
       <Switcher />
@@ -109,40 +123,27 @@ export default function Home({
         </ul>
       </section>
 
-      <F p={1} before={50} after={150} />
+      <F p={1} before={50} after={110} />
 
       <section className={CVStyles.employment}>
         <h2>Ansættelseshistorie</h2>
 
         <ol>
           <li>
-            <h3>Frivillig Lærer / Mentor, Hack Your Future</h3>
+            <h3>Frivillig Mentor, Hack Your Future</h3>
             <h4>København, Danmark; august 2024 – nu</h4>
             <p>
-              Hack Your Future tilbyder et software “bootcamp”-slags kursus til
+              Hack Your Future tilbyder et program kurser med formålet at træne
               flygtninger, indvandrer, og andre udsatte i det danske
-              arbejdsmarked.
-              {/* I first encountered the project via my work at Zendesk
-                (who partner with Hack Your Future) in 2019; after I left
-                Zendesk, I re-engaged with HYF directly. */}
+              arbejdsmarked med færdighederne til at få et tech job.
             </p>
             <p>
-              {/* Since then  */}Jeg har været aktiv med at identificere ting
-              som tilføjer friktion til den frivillige oplevelse, og derefter
-              tage det op med de belønnede ansatte for at samarbejde mod
-              forbedring.
-              {/* For example, there are more than 100 repositories in
-                their GitHub organisation, yet very little information on what
-                many of the repositories are (e.g. strategy documents, public
-                web site, curriculum, teaching materials, students’ projects,
-                …), so I proposed a combination of archiving and adding “topic”
-                labels to help. Or, as another example, it would be helpful it
-                were easier to identify who does what in the organisation, so
-                it’s easier to identify sources of help. */}
-            </p>
-            <p>
-              Jeg er aktiv i mentorgruppen, og deltager i diskussioner og
-              workshops omkring, hvordan man udvikler læseplanen.
+              Jeg arbejder med den aktive gruppe mentorer, og sammen danner vi
+              programmet og skaber træningsmaterialerne, og til sidst underviser
+              vi praktikanterne. Jeg er og aktiv i at identificere ting som
+              tilføjer friktion til den frivilliges oplevelse, såsom manglende
+              eller uklar dokumentations, eller "cruft", der skulle fjernes
+              eller arkiveres.
             </p>
             <p>
               Jeg har også ledet nogle klasser (f.eks. undervisning i Git), og
@@ -152,7 +153,21 @@ export default function Home({
           </li>
 
           <li>
-            <h3>Senior Software Engineer, Hedia</h3>
+            <h3>(Ulønnet) Senior Software Ingeniør, Estatetool</h3>
+            <h4>København, Danmark; juni 2025 — juni 2025</h4>
+            <p>
+              Estatetools kodebase danner én stor <Sk>Java / Spring Boot</Sk>{" "}
+              monolit, men med næsten ingen automatiserede tests. Jeg lavede
+              nogle grundlæggende automatiserede tests til deres kernefunktioner
+              med at bruge
+              <Sk>Playwright</Sk>
+              browser automatisering. Testerne kunne køres med produkten
+              indstillet enten til dansk eller til engelsk.
+            </p>
+          </li>
+
+          <li>
+            <h3>Senior Software Ingeniør, Hedia</h3>
             <h4>København, Danmark; juni 2024 – august 2024</h4>
             <p>
               <Sk>The stack</Sk>: full stack i TypeScript med en PostgreSQL
@@ -177,6 +192,8 @@ export default function Home({
             </p>
           </li>
 
+          <F p={2} before={92} after={110} />
+
           <li>
             <h3>Senior Software Ingeniør, Zendesk</h3>
             <h4>København, Danmark; februar 2019 – maj 2024</h4>
@@ -188,8 +205,6 @@ export default function Home({
               AWS. Derudover diverse mikrotjenester i Ruby on Rails eller
               TypeScript, og frontend-komponenter i React.
             </p>
-
-            <F p={2} before={63} after={150} />
 
             <p>
               Zendesk laver software til styring af kunderelationer (som kaldes
@@ -347,6 +362,8 @@ export default function Home({
               video til London 2012 Olympiske Lege.
             </p>
 
+            <F p={3} before={58} after={110} />
+
             <p>
               I al denne tid var Media Services sammensat af tre agile hold,
               hvoraf det ene blev ledet af mig. Mit arbejde omfattede mennesker
@@ -358,23 +375,6 @@ export default function Home({
               også at være en individ kode bidragyder.
             </p>
 
-            <F p={3} before={31} after={150} />
-
-            <h5>Yderligere arbejde</h5>
-
-            <p>
-              På forskellige tidspunkter var jeg også sysadmin til min afdelings
-              udviklingsmiljø. Jeg arbejdede også på "/programmes"-projektet,
-              det handler om udgivelsen af én side for hvert BBC-program ved
-              hjælp af en standard, automatisk udgivelsespipeline baseret på{" "}
-              <Sk>Ruby on Rails</Sk> og <Sk>Perl</Sk>. Til sidst trænede jeg et
-              scrum-hold i 3 måneder, fungerende som en "gæst" hovedingeniør,
-              der hjalp med at starte holdet i den rigtige retning. Sådan
-              forbedrede jeg teamets scrum-effektiviteten. Jeg gav vejledning
-              til holdets anden hovedingeniør, som ville fortsætte efter jeg
-              havde taget min afsked.
-            </p>
-
             <p>
               Jeg leverede mange effektive og engagerende{" "}
               <Sk>præsentationer</Sk>, i forskellige sammenhænge og til
@@ -382,6 +382,36 @@ export default function Home({
               200; internt i mit team, eller min afdeling, eller hele BBC
               engineering, eller eksternt / offentligt. Jeg blev bedt om at tale
               ved BBCs åbne dage, tech-topmøder, rekruttering dage osv.
+            </p>
+
+            <p>
+              I mine sidste måneder hos BBC trænede jeg et scrum-hold,
+              fungerende som en "gæst" hovedingeniør. I denne rolle kunne jeg
+              hjælpe med at starte holdet i den rigtige retning. Sådan
+              forbedrede jeg teamets scrum-effektiviteten. Jeg gav vejledning
+              til holdets anden hovedingeniør, som ville fortsætte efter jeg
+              havde taget min afsked.
+            </p>
+          </li>
+
+          <li>
+            <h3>Frivillig Open Source Bidragyder, MusicBrainz</h3>
+            <h4>Online; i min fritid, 2001 — 2006</h4>
+            <p>
+              MusicBrainz har formålet at være en omfattende og åben database
+              til musik. Grundlagt oprindeligt som reaktion til begrænsningerne,
+              der blev placeret på den tidligere Compact Disc Database (CDDB),
+              projektet voksede til at omfange et bredt udvalg musik-relateret
+              data.
+            </p>
+            <p>
+              I fem år gav jeg min fritid intensivt til dette projekt. Jeg var
+              den førende (og tit den eneste) vedligeholder til både webserveren
+              (<Sk>Perl, Apache, mod_perl, PostgreSQL</Sk>) og databasen og
+              diverse infrastruktur (mail, overvågning, sikkerhed, osv). Jeg var
+              langt den meste aktive bidrayger i flere år da jeg forbedrede
+              datakonsistens, performance, sikkerhed, skalbarhed, og jeg
+              udviklede mange nye features.
             </p>
           </li>
 
@@ -391,41 +421,23 @@ export default function Home({
               Milton Keynes, Storbritannien; december 2000 – september 2007
             </h4>
             <p>
-              Power Internet var en etableret internetudbyder, der også leverede
-              "bare metal" server hosting og skræddersyet websted udvikling.
-              Koden var næsten altid med <Sk>Perl</Sk> med <Sk>MySQL</Sk>.
+              Power Internet var en internetudbyder, der også leverede "bare
+              metal" server hosting og skræddersyet websted udvikling. Min rolle
+              var oprindeligt at udvikle netop disse hjemmesider, men den
+              voksede sig hurtigt til at fokusere i stedet på udviklingsmetoder,
+              vedligeholdelse af servererne, der kørte vores kernefunktioner
+              (mail, hosting, DNS, authentication osv) samt at skabe og
+              vedligeholde flere afgørende interne tjenester. Koden var næsten
+              altid med <Sk>Perl</Sk> med <Sk>MySQL</Sk>.
             </p>
 
             <p>
-              Jeg var pioner for skabelsen og brugen af velbyggede, velafprøvede
-              genbrugelig bibliotekskode mellem projekter, hvilket forbedrede
-              kodens sikkerhed, udviklingshastighed og portabilitet af
-              programmør færdigheder mellem projekterne. Jeg promoverede også
-              produktsikkerhed via forbedret validering, omhyggelig kodning og
-              så videre.
-            </p>
-
-            <p>
-              Fordi dette var en internetudbyder, lærte jeg meget om
-              protokoller: IP-stakken, SMTP, IMAP, RADIUS, DNS, HTTP, SSH og
-              mange flere. En kollega og jeg redesignede og genopbyggede alle
-              vores kerneapplikationstjenester (DNS, web, mail osv.) for høj
-              tilgængelighed og problemfri drift.
-            </p>
-
-            <p>
-              Jeg oprettede på egen hånd et support billetsystem, vedtaget af
-              vores kundesupportteam; og fortsat derefter med at lave en serie
-              af "sources of truth" for diverse interne datasæt. Cirka 2005
-              lancerede virksomheden deres flagskib B2B-produkt, der leverede
-              høj-tilgængelig og højhastigheds WAN'er. Jeg var ansvarlig for al
-              softwaren bag produktet, inklusive webbaseret drift og
-              administration, samt netværksovervågning i realtid og
-              forbindelseskontrol.
+              Jeg lærte også om diverse Internet protokoller såsom IP / ICMP /
+              UDP / TCP, SMTP, IMAP, RADIUS, HTTP, SSH mm.
             </p>
           </li>
 
-          <F p={4} before={136} after={150} />
+          <F p={4} before={32.5} after={110} />
 
           <li>
             <h3>Udvikler, Radius Retail</h3>
@@ -512,7 +524,7 @@ export default function Home({
         <p>Referencer oplyses gerne på opfordring</p>
       </section>
 
-      <F p={5} before={33} after={10} />
+      <F p={5} before={72.5} after={0} />
 
       <script
         dangerouslySetInnerHTML={{

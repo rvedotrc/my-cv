@@ -4,6 +4,7 @@ import type { PropsWithChildren, ReactNode } from "react";
 import CVStyles from "../CVStyles/page.module.css";
 import Switcher from "../switcher/page";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 const Sk = (props: PropsWithChildren) => (
   <span className={CVStyles.skillWord}>{props.children}</span>
@@ -11,6 +12,17 @@ const Sk = (props: PropsWithChildren) => (
 
 const F = (props: { p: number; before?: number; after?: number }) => (
   <>
+    <div
+      className={CVStyles.pagePositionGuide}
+      style={{
+        borderTop: "1px solid red",
+        left: "0",
+        right: "0",
+        height: "1em",
+        position: "absolute",
+        top: `${props.p * 1108 - 100.5}px`,
+      }}
+    />
     <div
       style={{
         // backgroundColor: "red",
@@ -38,6 +50,8 @@ export default function Home({
   pitchTitle: ReactNode;
   pitchText: ReactNode;
 }) {
+  if (!pitchText || !pitchTitle) return redirect("/");
+
   return (
     <div lang="en-gb" className={CVStyles.cv}>
       <Switcher />
@@ -107,44 +121,44 @@ export default function Home({
         </ul>
       </section>
 
-      <F p={1} before={50} after={150} />
+      <F p={1} before={50} after={110} />
 
       <section className={CVStyles.employment}>
         <h2>Employment history</h2>
 
         <ol>
           <li>
-            <h3>Volunteer Teacher / Mentor, Hack Your Future</h3>
+            <h3>Volunteer Mentor, Hack Your Future</h3>
             <h4>Copenhagen, Denmark; August 2024 – present</h4>
             <p>
-              Hack Your Future offers a coding “bootcamp”-style course to
-              refugees, immigrants, and others disadvantaged in the job market.
-              {/* I first encountered the project via my work at Zendesk
-                (who partner with Hack Your Future) in 2019; after I left
-                Zendesk, I re-engaged with HYF directly. */}
+              Hack Your Future runs a program of courses designed to train
+              refugees, immigrants, and others disadvantaged in the Danish job
+              market with the skills required to land a tech job.
             </p>
             <p>
-              {/* Since then  */}I have been active in identifying things which
-              add friction to the volunteer experience, communicating those
-              issues, then proposing and (where possible) implementing
-              solutions.
-              {/* For example, there are more than 100 repositories in
-                their GitHub organisation, yet very little information on what
-                many of the repositories are (e.g. strategy documents, public
-                web site, curriculum, teaching materials, students’ projects,
-                …), so I proposed a combination of archiving and adding “topic”
-                labels to help. Or, as another example, it would be helpful it
-                were easier to identify who does what in the organisation, so
-                it’s easier to identify sources of help. */}
+              I work with the core active group of mentors as we shape the
+              program and author the training materials, and ultimately teaching
+              the sessions. I am also active in identifying things which add
+              friction to the volunteer experience, such as missing or unclear
+              documentation, or "cruft" which would better be removed or
+              archived.
             </p>
             <p>
-              I am active in the mentor group, and participate in discussions
-              and workshops around how to develop the curriculum.
+              I also sometimes turn up to the weekly meetings solely to hang out
+              and socialise, and provide guidance where requested.
             </p>
+          </li>
+
+          <li>
+            <h3>(Unpaid) Senior Software Engineer, Estatetool</h3>
+            <h4>Copenhagen, Denmark; June 2025 — June 2025</h4>
             <p>
-              I have also led some classes (e.g. teaching Git), and sometimes
-              turn up to the weekly meetings purely to hang out and socialise,
-              and provide guidance where requested.
+              Estatetool's codebase took the form of a large{" "}
+              <Sk>Java / Spring Boot</Sk> monolith, but with next to no
+              automated testing. I created some initial automated tests for
+              their core business-critical workflow, using <Sk>Playwright</Sk>{" "}
+              browser automation. The tests verified both with the product's UI
+              set to Danish, and also when set to English.
             </p>
           </li>
 
@@ -174,6 +188,8 @@ export default function Home({
             </p>
           </li>
 
+          <F p={2} before={92} after={110} />
+
           <li>
             <h3>Senior Software Engineer, Zendesk</h3>
             <h4>Copenhagen, Denmark; February 2019 – May 2024</h4>
@@ -185,8 +201,6 @@ export default function Home({
               AWS. Additionally, various microservices in Ruby on Rails or
               TypeScript, and front end components in React.
             </p>
-
-            <F p={2} before={63} after={150} />
 
             <p>
               Zendesk makes customer relationship management software (which is
@@ -341,6 +355,8 @@ export default function Home({
               video for the London 2012 Olympic Games.
             </p>
 
+            <F p={3} before={58} after={110} />
+
             <p>
               Throughout this time, Media Services was composed of three agile
               teams, one of which was led by me. My work included people
@@ -351,28 +367,40 @@ export default function Home({
               as much as possible, also being an individual code contributor.
             </p>
 
-            <F p={3} before={31} after={150} />
-
-            <h5>Other work</h5>
-
-            <p>
-              At various times, I was also my department’s development
-              environment sysadmin; I worked on the “/programmes” project,
-              publishing one page for each BBC programme using a standard,
-              automated publishing pipeline based on <Sk>Ruby on Rails</Sk> and{" "}
-              <Sk>Perl</Sk>; and I coached a scrum team for 3 months, acting as
-              a “guest” principal engineer, helping start the team in the right
-              direction, improving scrum efficiency. Crucially, I provided
-              guidance to the team’s other principal engineer, who would carry
-              on after I had left.
-            </p>
-
             <p>
               I delivered many effective and engaging <Sk>presentations</Sk>, in
               various contexts and to various audiences: anything from 5 minutes
               to 50, 5 people to 200; internal to my team, or my department, or
               all of BBC engineering, or external / public. I was asked to speak
               at BBC open days, tech summits, recruitment days, and more.
+            </p>
+
+            <p>
+              In my last months there, I coached a scrum team, acting as a
+              “guest” principal engineer. In this role I was able to help start
+              the team in the right direction, for example by improving scrum
+              efficiency. Crucially, I provided guidance to the team’s other
+              principal engineer, who would carry on after I had left.
+            </p>
+          </li>
+
+          <li>
+            <h3>Voluntary Open Source Contributor, MusicBrainz</h3>
+            <h4>Online; in my spare time, 2001 — 2006</h4>
+            <p>
+              MusicBrainz aims to be a comprehensive and open database of music.
+              Originally founded in response to the restrictions placed on the
+              Compact Disc Database, the project then grew to cover a wide swath
+              of music-related data.
+            </p>
+            <p>
+              For five years I intensively volunteered my time to this project,
+              being the lead (and often only) maintainer of both the web server
+              (<Sk>Perl, Apache, mod_perl, PostgreSQL</Sk>), database, and other
+              infrastructure (mail, monitoring, security, etc). I was by far the
+              most active code contributor for several years, improving data
+              consistency, performance, security, scalability, as well as adding
+              many new features.
             </p>
           </li>
 
@@ -382,41 +410,23 @@ export default function Home({
               Milton Keynes, United Kingdom; December 2000 – September 2007
             </h4>
             <p>
-              Power Internet was an established Internet service provider, and
-              also provided bare metal server hosting and bespoke web site
-              development. The code was almost always in <Sk>Perl</Sk> with{" "}
-              <Sk>MySQL</Sk>.
+              Power Internet was an Internet service provider that also provided
+              bare metal server hosting and bespoke web site development. My
+              role was initially on those bespoke web sites, though it quickly
+              grew to focus instead on development practices, maintenance of the
+              servers providing our core services (mail, web hosting, DNS,
+              authentication, etc), and the creation and maintenance of several
+              critical internal web sites. The code was almost always in{" "}
+              <Sk>Perl</Sk> with <Sk>MySQL</Sk>.
             </p>
 
             <p>
-              I pioneered the creation and use of well-built, well-tested
-              reusable library code between projects, thus improving code
-              security, speed of development, and portability of programmer
-              skills between projects. I also promoted product security via
-              improved validation, careful encoding, and so forth.
-            </p>
-
-            <p>
-              Because this was an ISP, while here I learned much more about
-              protocols: the IP stack, SMTP, IMAP, RADIUS, DNS, HTTP, SSH, and
-              many more. A colleague and I redesigned and rebuilt all of our
-              core application services (DNS, web, mail, etc) for high
-              availability and ease of operation.
-            </p>
-
-            <p>
-              I single-handedly created a support ticketing system, adopted by
-              our customer support team; and then went on to create a series of
-              sources-of-truth for various internal data sets. Circa 2005, the
-              company launched their flagship B2B product, providing businesses
-              with high-availability high-speed WANs. I responsible for all of
-              the software behind the product, including web-based management
-              and administration, and real-time network monitoring and
-              connection control.
+              I also learned about various Internet protocols: the IP stack,
+              SMTP, IMAP, RADIUS, DNS, HTTP, SSH, and so on.
             </p>
           </li>
 
-          <F p={4} before={136} after={150} />
+          <F p={4} before={52} after={110} />
 
           <li>
             <h3>Developer, Radius Retail</h3>
@@ -503,7 +513,7 @@ export default function Home({
         <p>References available on request</p>
       </section>
 
-      <F p={5} before={52} after={10} />
+      <F p={5} before={92} after={0} />
 
       <script
         dangerouslySetInnerHTML={{
