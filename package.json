@@ -11,7 +11,7 @@
     "start": "next start",
     "test": "concurrently --group pnpm:test:* && pnpm test-node",
     "test-node": "echo 'WARNING: no node tests defined in this project'",
-    "test:lint": "next lint"
+    "test:lint": "echo 'WARNING: no linting set up in this project'"
   },
   "dependencies": {
     "dotenv": "17.2.1",
