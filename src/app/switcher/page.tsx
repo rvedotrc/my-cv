@@ -10,7 +10,7 @@ export default async function Switcher() {
       {scan.variants.map((variant) => (
         <li key={variant}>
           {scan.languages.map(async (language) =>
-            scan.comboExists({ variant, language }) ?
+            scan.comboExists({ variant, language }) ? (
               <Link
                 key={language}
                 href={`/${language}/${variant}`}
@@ -19,12 +19,14 @@ export default async function Switcher() {
               >
                 {language}
               </Link>
-            : <span
+            ) : (
+              <span
                 key={language}
                 style={{ marginInlineEnd: "0.5em", opacity: 0.3 }}
               >
                 {language}
               </span>
+            ),
           )}
           {variant}
         </li>
