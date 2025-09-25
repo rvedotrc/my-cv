@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "postinstall": "pnpx puppeteer browsers install firefox",
     "test:prettier": "prettier --check .",
     "format": "prettier --write .",
     "dev": "next dev --port 3001",
